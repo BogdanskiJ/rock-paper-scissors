@@ -39,5 +39,10 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://bogdanskij.github.io/rock-paper-scissors.git"
+	},
+	"main": "index.js"
 }
