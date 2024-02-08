@@ -44,5 +44,8 @@
 		"type": "git",
 		"url": "git+https://bogdanskij.github.io/rock-paper-scissors.git"
 	},
-	"main": "index.js"
+	"main": "index.js",
+	"devDependencies": {
+		"gh-pages": "^6.1.1"
+	}
 }
