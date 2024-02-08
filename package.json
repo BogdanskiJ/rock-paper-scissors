@@ -31,7 +31,6 @@
 	"browserslist": {
 		"production": [
 			">0.2%",
-			"not dead",
 			"not op_mini all"
 		],
 		"development": [
@@ -44,7 +43,7 @@
 		"type": "git",
 		"url": "git+https://bogdanskij.github.io/rock-paper-scissors.git"
 	},
-	"main": "index.js",
+	"main": "src/index.js",
 	"devDependencies": {
 		"gh-pages": "^6.1.1"
 	}
