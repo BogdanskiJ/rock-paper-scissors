@@ -2,6 +2,8 @@
 
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
+## Demo
+[Demo - live page](https://bogdanskij.github.io/rock-paper-scissors/)
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
