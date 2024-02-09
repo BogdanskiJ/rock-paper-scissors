@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
+
+import { InitialModal } from "./features/initalModal";
 import { Buttons } from "./features/buttons";
 import { Game } from "./features/game";
 import { Header } from "./features/header";
 import { RulesModal } from "./features/rulesModal";
+
+import { StyledApp, StyledContainer } from "./styled";
+
 import normalRules from "./images/image-rules.svg";
 import extendedRules from "./images/image-rules-bonus.svg";
-import { StyledApp, StyledContainer } from "./styled";
-import { InitialModal } from "./features/initalModal";
 
 function App() {
 	const [result, setResult] = useState(0);

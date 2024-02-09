@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { StyledButtonsBox } from "./styled";
 
 export const Buttons = ({

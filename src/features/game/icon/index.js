@@ -1,45 +1,20 @@
-import React, { useEffect, useState } from "react";
-import {
-	StyledAllBox,
-	StyledBox,
-	StyledIconBox,
-	StyledImg,
-	StyledInnerBox,
-	StyledOuterBox,
-} from "./styled";
-import icon from "../../../images/icon-paper.svg";
+import { useEffect, useState } from "react";
+
+import { IconContainer } from "./iconContainer";
+
+import { defaultData } from "../iconData";
 
 export const Icon = ({
-	handleSelectedIcon,
+	$handleSelectedIcon,
 	$data,
-	$whoBetter,
 	$normalVersion,
 	$newSelectedIcon,
 }) => {
 	const [animate, setAnimate] = useState(false);
 
-	const defaultData = {
-		name: "paper",
-		src: icon,
-		position: {
-			top: "50%",
-			bottom: "unset",
-			left: "50%",
-			right: "unset",
-		},
-		transform: {
-			x: "-50%",
-			y: "-50%",
-		},
-		colors: {
-			first: "green",
-			second: "green",
-		},
-	};
-
 	const handleOnClick = () => {
-		if (handleSelectedIcon && $data) {
-			handleSelectedIcon($data);
+		if ($handleSelectedIcon && $data) {
+			$handleSelectedIcon($data);
 		}
 	};
 
@@ -48,31 +23,14 @@ export const Icon = ({
 	}, [$data]);
 
 	return (
-		<>
-			{$data ? (
-				<StyledIconBox
-					$newSelectedIcon={$newSelectedIcon}
-					$normalVersion={$normalVersion}
-					$animate={animate}
-					$data={$data}
-					onClick={handleOnClick}
-					$position={$data.position}
-					$transform={$data.transform}
-					$colors={$data.colors}>
-					<StyledImg src={$data.src} />
-				</StyledIconBox>
-			) : (
-				<StyledIconBox
-					$newSelectedIcon={$newSelectedIcon}
-					$normalVersion={$normalVersion}
-					$animate={animate}
-					$data={defaultData}
-					onClick={handleOnClick}
-					$position={defaultData.position}
-					$transform={""}
-					$colors={defaultData.colors}
-				/>
-			)}
-		</>
+		<IconContainer
+			$handleSelectedIcon={$handleSelectedIcon}
+			$data={$data}
+			$normalVersion={$normalVersion}
+			$newSelectedIcon={$newSelectedIcon}
+			$animate={animate}
+			$handleOnClick={handleOnClick}
+			$defaultData={defaultData}
+		/>
 	);
 };

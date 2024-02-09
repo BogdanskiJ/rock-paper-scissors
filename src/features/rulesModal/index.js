@@ -1,10 +1,10 @@
-import React from "react";
 import {
 	StyledIconClose,
 	StyledImage,
 	StyledImageBox,
 	StyledModalBox,
 } from "./styled";
+
 import iconClose from "../../images/icon-close.svg";
 
 export const RulesModal = ({ $modalSrc, $activeModal, $handleRulesModal }) => {

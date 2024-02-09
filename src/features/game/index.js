@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { StyledBackground, StyledGameBox } from "./styled";
-import { Icons } from "./icons";
-import { SelectIcon } from "./select";
+import { useState } from "react";
+
+import { GameContainer } from "./gameContainer";
 
 export const Game = ({
 	$handleResult,
-	$result,
 	$whoBetter,
 	$handleWhoBetter,
 	$normalVersion,
@@ -13,10 +11,6 @@ export const Game = ({
 }) => {
 	const [selectedIcon, setSelectedIcon] = useState(null);
 	const [newGame, setNewGame] = useState(true);
-	const [result, setResult] = useState(0);
-	const [computerSelected, setComputerSelected] = useState("");
-	const [userSelected, setUserSelected] = useState("");
-	const [animate, setAnimate] = useState(false);
 
 	const handleSelectedIcon = (icon) => {
 		if (selectedIcon && icon) {
@@ -33,25 +27,15 @@ export const Game = ({
 	};
 
 	return (
-		<StyledGameBox>
-			<StyledBackground>
-				<Icons
-					$normalVersion={$normalVersion}
-					handleSelectedIcon={handleSelectedIcon}
-					$selectedIcon={selectedIcon}
-					handleNewGame={handleNewGame}
-				/>
-				<SelectIcon
-					$handleSaveToLocalStorage={$handleSaveToLocalStorage}
-					$normalVersion={$normalVersion}
-					$handleResult={$handleResult}
-					$selectedIcon={selectedIcon}
-					handleSelectedIcon={handleSelectedIcon}
-					handleNewGame={handleNewGame}
-					$handleWhoBetter={$handleWhoBetter}
-					$whoBetter={$whoBetter}
-				/>
-			</StyledBackground>
-		</StyledGameBox>
+		<GameContainer
+			$handleResult={$handleResult}
+			$whoBetter={$whoBetter}
+			$handleWhoBetter={$handleWhoBetter}
+			$normalVersion={$normalVersion}
+			$handleSaveToLocalStorage={$handleSaveToLocalStorage}
+			$handleSelectedIcon={handleSelectedIcon}
+			$selectedIcon={selectedIcon}
+			$handleNewGame={handleNewGame}
+		/>
 	);
 };

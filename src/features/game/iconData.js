@@ -153,3 +153,22 @@ export const iconExternalData = [
 		},
 	},
 ];
+
+export const defaultData = {
+	name: "paper",
+	src: iconPaper,
+	position: {
+		top: "50%",
+		bottom: "unset",
+		left: "50%",
+		right: "unset",
+	},
+	transform: {
+		x: "-50%",
+		y: "-50%",
+	},
+	colors: {
+		first: "green",
+		second: "green",
+	},
+};

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bg from "../../images/bg-triangle.svg";
 
 export const StyledGameBox = styled.div`
 	width: 100%;

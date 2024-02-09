@@ -9,7 +9,6 @@ export const StyledIconBox = styled.div`
 	overflow: hidden;
 	border: ${(props) => (props.$newSelectedIcon ? "30px" : "15px")} solid
 		${(props) => props.$colors.second};
-	/* border: 15px solid ${(props) => props.$colors.second}; */
 	top: ${(props) => props.$position.top};
 	bottom: ${(props) => props.$position.bottom};
 	left: ${(props) => props.$position.left};
@@ -26,10 +25,6 @@ export const StyledIconBox = styled.div`
 	@media screen and (max-width: ${({ theme }) => theme.breakpoint.md}) {
 		border: 15px solid ${(props) => props.$colors.second};
 	}
-
-	/* @media screen and (max-width: ${({ theme }) => theme.breakpoint.md}) {
-		border: 15px solid ${(props) => props.$colors.second};
-	} */
 
 	@keyframes rotate-hor-center {
 		0% {

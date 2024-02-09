@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from "react";
-import {
-	StyledHeaderBox,
-	StyledNameSpan,
-	StyledNamesBox,
-	StyledScoreBox,
-} from "./styled";
+import { useEffect, useState } from "react";
+
+import { HeaderContainer } from "./headerContainer";
 
 export const Header = ({ $result, $normalVersion }) => {
 	const [animate, setAnimate] = useState(false);
@@ -20,18 +16,10 @@ export const Header = ({ $result, $normalVersion }) => {
 	}, [$result]);
 
 	return (
-		<StyledHeaderBox>
-			<StyledNamesBox $normalVersion={$normalVersion}>
-				<StyledNameSpan>Rock</StyledNameSpan>
-				<StyledNameSpan>Paper</StyledNameSpan>
-				<StyledNameSpan>Scissors</StyledNameSpan>
-				<StyledNameSpan $normalVersion={$normalVersion}>Lizard</StyledNameSpan>
-				<StyledNameSpan $normalVersion={$normalVersion}>Spock</StyledNameSpan>
-			</StyledNamesBox>
-			<StyledScoreBox $animate={animate}>
-				<span>Score</span>
-				<div>{$result}</div>
-			</StyledScoreBox>
-		</StyledHeaderBox>
+		<HeaderContainer
+			$result={$result}
+			$normalVersion={$normalVersion}
+			$animate={animate}
+		/>
 	);
 };

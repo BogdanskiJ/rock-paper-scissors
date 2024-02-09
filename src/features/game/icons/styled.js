@@ -45,7 +45,6 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledBox = styled.div`
-	/* max-width: 25%; */
 	max-height: 33vh;
 	aspect-ratio: 1/1;
 	display: flex;

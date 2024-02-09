@@ -75,14 +75,6 @@ export const StyledIconClose = styled.img`
 	z-index: 999;
 	opacity: 0.25;
 
-	@media screen and (max-width: ${({ theme }) => theme.breakpoint.md}) {
-		bottom: -10vh;
-		top: unset;
-		right: unset;
-		left: 50%;
-		transform: translatex(-50%);
-	}
-
 	&:hover {
 		filter: brightness(0) saturate(100%) invert(12%) sepia(95%) saturate(6142%)
 			hue-rotate(358deg) brightness(101%) contrast(112%);
@@ -92,5 +84,13 @@ export const StyledIconClose = styled.img`
 		filter: brightness(0) saturate(100%) invert(12%) sepia(95%) saturate(6142%)
 			hue-rotate(358deg) brightness(101%) contrast(112%);
 		opacity: 1;
+	}
+
+	@media screen and (max-width: ${({ theme }) => theme.breakpoint.md}) {
+		bottom: -10vh;
+		top: unset;
+		right: unset;
+		left: 50%;
+		transform: translatex(-50%);
 	}
 `;

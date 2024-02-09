@@ -63,15 +63,9 @@ export const StyledIconBox = styled.div`
 	flex-direction: column;
 	justify-content: flex-start;
 	height: 100%;
-	/* height: 75%; */
 	align-items: center;
 	width: 33%;
 	position: relative;
-
-	@media screen and (max-width: ${({ theme }) => theme.breakpoint.md}) {
-		flex-direction: column-reverse;
-	}
-
 	transition: 1s ease-in-out;
 	transform: ${(props) =>
 		props.type === "first"
@@ -82,6 +76,10 @@ export const StyledIconBox = styled.div`
 			? "translateX(-10%)"
 			: "translateX(10%)"};
 
+	@media screen and (max-width: ${({ theme }) => theme.breakpoint.md}) {
+		flex-direction: column-reverse;
+	}
+
 	span {
 		text-transform: uppercase;
 		color: ${({ theme }) => theme.color.white};
@@ -90,7 +88,6 @@ export const StyledIconBox = styled.div`
 		text-align: center;
 
 		@media screen and (max-width: ${({ theme }) => theme.breakpoint.md}) {
-			/* margin-bottom: 100%; */
 			white-space: nowrap;
 			font-size: 20px;
 			position: absolute;
@@ -123,7 +120,6 @@ export const StyledButtonBox = styled.div`
 	opacity: ${(props) => (props.$whoBetter === "initial" ? "0" : "1")};
 	visibility: ${(props) =>
 		props.$whoBetter === "initial" ? "hidden" : "visible"};
-
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -181,7 +177,6 @@ export const StyledButton = styled.button`
 	font-size: 12px;
 	letter-spacing: 2px;
 	line-height: 1;
-
 	color: ${({ theme }) => theme.color.scoreText};
 
 	&:hover {

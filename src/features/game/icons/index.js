@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
 import { iconNormalData } from "../iconData";
 import { iconExternalData } from "../iconData";
-import { Icon } from "../icon";
+
+import { IconsContainer } from "./iconsContainer";
 
 import normalBg from "../../../images/bg-triangle.svg";
 import extendedBg from "../../../images/bg-pentagon.svg";
 
-import { StyledBox, StyledIconsBox, StyledImg } from "./styled";
-
 export const Icons = ({
-	handleSelectedIcon,
+	$handleSelectedIcon,
 	$selectedIcon,
-	handleNewGame,
+	$handleNewGame,
 	$normalVersion,
 }) => {
 	const [arrayData, setArrayData] = useState(iconNormalData);
@@ -28,21 +28,13 @@ export const Icons = ({
 	}, [$normalVersion]);
 
 	return (
-		<StyledIconsBox $selectedIcon={$selectedIcon}>
-			<StyledBox>
-				<StyledImg src={background} />
-				{arrayData.map((icon) => {
-					return (
-						<Icon
-							$normalVersion={$normalVersion}
-							handleSelectedIcon={handleSelectedIcon}
-							handleNewGame={handleNewGame}
-							$data={icon}
-							key={icon.name}
-						/>
-					);
-				})}
-			</StyledBox>
-		</StyledIconsBox>
+		<IconsContainer
+			$handleSelectedIcon={$handleSelectedIcon}
+			$selectedIcon={$selectedIcon}
+			$handleNewGame={$handleNewGame}
+			$normalVersion={$normalVersion}
+			$arrayData={arrayData}
+			$background={background}
+		/>
 	);
 };
